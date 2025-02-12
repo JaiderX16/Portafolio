@@ -1,0 +1,66 @@
+body, html {
+    margin: 0px;
+    padding: 0px;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: black;
+  }
+  
+  #canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Para que el canvas esté detrás de todos los demás elementos */
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .contenedor {
+    width: 100%;
+    max-width: 800px; /* Tamaño máximo */
+    overflow: hidden;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 20px;
+  
+                
+  }
+  
+  .video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio (divide el alto por el ancho y multiplica por 100) */
+    height: 0;
+    transition: padding-bottom 0.5s;
+  }
+  
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+  
+  /* Ajusta el tamaño de la fuente para dispositivos móviles */
+  @media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+    
+  }
+
+
+
+
+  

@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <style>
+    /* Para navegadores basados en WebKit (Chrome, Safari) */
+    ::-webkit-scrollbar {
+      width: 0px;
+      /* Ancho de la barra de desplazamiento vertical */
+      height: 0px;
+      /* Alto de la barra de desplazamiento horizontal */
+    }
+
+    /* Para otros navegadores */
+    body {
+      overflow: -moz-scrollbars-none;
+      /* Firefox */
+      -ms-overflow-style: none;
+      /* Internet Explorer y Edge */
+    }
+
+    /* En algunos navegadores, podrías necesitar este truco adicional */
+    body {
+      overflow: hidden;
+      /* Oculta la barra de desplazamiento */
+    }
+
+    body::-webkit-scrollbar {
+      display: none;
+      /* Oculta la barra de desplazamiento en navegadores basados en WebKit */
+    }
+
+    /* Pero también debes mantener la capacidad de desplazarse */
+    html,
+    body {
+      overflow: hidden;
+      /* Ocultar barras de desplazamiento */
+    }
+
+    html,
+    body {
+      height: 100%;
+      /* Asegurarse de que la altura sea del 100% */
+      overflow: auto;
+      /* Permitir el desplazamiento */
+    }
+
+    .image-container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .image-container::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 20%;
+      /* Ajusta esta altura según la cantidad de difuminado que desees */
+      background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0) 0%,
+        rgb(0, 0, 0) 100%
+      );
+    }
+
+    .image-container {
+      position: relative;
+    }
+
+    /* #canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+    } */
+
+    .image-container > .relative {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+
+  <body class="bg-black">
+    <section>
+      <nav id="navbar" class="bg-black bg-opacity-50 backdrop-filter backdrop-blur-sm border-gray-200 fixed inset-x-0 top-0 z-50">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+          <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <img src="./img/programacion.png" class="h-10" alt="Flowbite Logo"/>
+          </a>
+          <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+            <button
+              id="menuToggle"
+              data-collapse-toggle="navbar-cta"
+              type="button"
+              class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+              aria-controls="navbar-cta"
+              aria-expanded="false"
+            >
+              <span class="sr-only">Open main menu</span>
+              <svg
+                class="w-5 h-5"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 17 14"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M1 1h15M1 7h15M1 13h15"
+                />
+              </svg>
+            </button>
+          </div>
+          <div
+            class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1 md:flex-row-reverse md:space-x-reverse"
+            id="navbar-cta"
+          >
+            <ul
+              class="flex flex-col font-medium p-4 md:p-0 mt-4 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0"
+            >
+              <li>
+                <a
+                  href="#INICIO"
+                  class="block py-2 px-3 md:p-0 text-gray-900 rounded font-bold hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                  aria-current="page"
+                  >INICIO</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#RESERVA"
+                  class="block py-2 px-3 md:p-0 text-gray-900 rounded font-bold hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                  >RESERVA</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#ESTADISTICAS"
+                  class="block py-2 px-3 md:p-0 text-gray-900 rounded font-bold hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                  >ESTADISTICAS</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#CONTACTO"
+                  class="block py-2 px-3 md:p-0 text-gray-900 rounded font-bold hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                  >CONTACTO</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </section>
+
+    <div class="image-container relative w-full mt-16">
+      <!-- Canvas como fondo -->
+      <canvas id="canvas" class="absolute inset-0 h-full w-full"></canvas>
+
+      <!-- Contenido superpuesto -->
+      <div
+        class="relative text-white sm:ml-5 md:ml-12 lg:ml-12 md:mr-12 sm:w-full md:w-3/5 lg:w-3/5 py-28 md:py-40 lg:py-56"
+      >
+        <h1 class="text-2xl sm:text-2xl md:text-7xl lg:text-7xl font-bold my-3 ml-4">JAIDER PARAGUAY JUNCO</h1>
+
+        <h1 class="text-2xl sm:text-2xl md:text-7xl lg:text-6xl font-bold my-3 ml-4">Desarrollador en</h1>
+
+        <h1 class="text-3xl sm:text-3xl md:text-7xl lg:text-8xl font-bold my-3 md:h-20 h-8 lg:h-24 ml-4">
+          <span class="typed"></span>
+        </h1>
+        
+
+        <p class="text-xl sm:text-xl md:text-2xl lg:text-3xl font-bold my-3 mr-4 ml-4">
+          Egresado de Ingeniería de Sistemas por la Universidad Continental, con pasión por la tecnología, 
+          estoy listo para llevar tus ideas al siguiente nivel con soluciones innovadoras y a medida.
+        </p>
+
+      </div>
+    </div>
+
+
+    <section id="RESERVA" class="py-4">
+      <h1 class="text-7xl font-bold text-center text-white sm:mx-12 lg:mx-96">
+        PROYECT
+      </h1>
+    </section>
+
+
+    <section id="INICIO" class="bg-black text-white font-sans py-4">
+      
+      
+      
+
+      <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-white text-xl mx-6 md:mx-10 lg:mx-32 transition-transform">
+        
+        <div class="p-3 bg-gray-800 rounded-lg duration-300 ease-in-out hover:scale-105">
+            <img class="rounded-lg mb-2" src="/img/Projects/Aurora_Chat.png" alt="">
+            <div class="mt-2">
+              <h1 class="font-bold">CHAT BOT CON IA</h1>
+              <p class="mt-2 text-sm">Chatbot interactivo basado en la API de Gemini, capaz de responder 
+                preguntas y mantener conversaciones fluidas mediante inteligencia artificial.</p>
+              <h2 class="font-bold mt-2">TECNOLOGIAS USADAS</h2>
+
+
+
+              <div class="mt-2">
+                <ul class="grid grid-cols-5 gap-2 max-w-3xl mx-auto">
+                  <li class="flex flex-col items-center text-center transition-transform duration-300 ease-in-out hover:scale-150">
+                    <img src="./img/skills/html5.png" class="h-12 w-auto" alt="HTML5 logo"/>
+                  </li>
+                  <li class="flex flex-col items-center text-center transition-transform duration-300 ease-in-out hover:scale-150">
+                    <img src="./img/skills/css3.png" class="h-12 w-auto" alt="CSS3 logo"/>
+                  </li>
+                  <li class="flex flex-col items-center text-center transition-transform duration-300 ease-in-out hover:scale-150">
+                    <img src="./img/skills/javascript.png" class="h-12 w-auto" alt="JavaScript logo"/>
+                  </li>
+                </ul>
+              </div>
+
+
+
+
+            </div>
+            <div class="flex justify-center mt-4">
+              <button onclick="window.open('https://aurora-chat-lilac.vercel.app/', '_blank', 'noopener,noreferrer')" class="font-bold bg-blue-700 rounded-lg px-3 py-1 text-white hover:bg-blue-800">
+                VER DEMO
+              </button>
+            </div>
+            
+
+        </div>
+    
+        <div class="p-4 bg-gray-800 rounded-lg duration-300 ease-in-out hover:scale-105">
+            <p>asdasdasd</p>
+        </div>
+    
+        <div class="p-4 bg-gray-800 rounded-lg duration-300 ease-in-out hover:scale-105">
+            <p>Contenido 3</p>
+        </div>
+    
+        <div class="p-4 bg-gray-800 rounded-lg duration-300 ease-in-out hover:scale-105">
+            <p>Contenido 4</p>
+        </div>
+        
+      </section>
+
+      
+      
+<!--       
+      <div class="items-center mt-16 mb-20">
+        <div class="text-4xl font-bold mx-5 lg:mx-32 flex">
+          <span class="text-blue-400 mr-2">"</span>
+          <h1>Mis proyectos</h1>
+        </div>
+      </div> -->
+
+
+
+      <!-- <div class="max-w-7xl mx-auto p-6 font-bold">
+        <div class="flex flex-col lg:flex-row items-center">
+          <div class="lg:w-1/2 space-y-6">
+            <p class="text-zinc-400 text-xl">
+              Un estudio reciente realizado en campos de maíz en diferentes
+              regiones agrícolas encontró que un pH del suelo por debajo de 6.0
+              redujo significativamente el rendimiento del cultivo en un
+              promedio del
+            </p>
+            <div class="text-blue-400 text-6xl font-bold">20%</div>
+            <p class="text-zinc-400 text-xl">
+              en comparación con suelos con un pH óptimo de 6.5 a 7.0. Esto
+              resalta la importancia crítica de mantener un pH adecuado en el
+              suelo para maximizar la productividad agrícola y la rentabilidad
+              de los cultivos.
+            </p>
+          </div>
+        </div>
+      </div> -->
+    </section>
+
+    <section id="RESERVA" class="py-4">
+      <h1 class="text-7xl font-bold text-center text-white sm:mx-12 lg:mx-96">
+        SKILLS
+      </h1>
+    </section>
+
+
+
+
+    
+
+    
+
+
+
+
+
+    <!-- MODULO DE TECNOLOGIAS XD -->
+
+    <section id="skills" class="text-white py-4 lg:px-20 md:px-10 mx-8 flex justify-center">
+      <ul class="flex flex-wrap justify-center gap-6">
+        <li class="flex flex-col items-center text-center mx-2 mt-4 transition-transform hover:scale-150"> <!-- hover:scale-110 -->
+          <img src="./img/skills/html5.png" class="h-16 w-auto" alt="HTML5 logo"/>
+          <span class="font-bold mt-2">HTML5</span>
+        </li>
+        <li class="flex flex-col items-center text-center mx-2 mt-4 transition-transform hover:scale-150"> <!-- hover:scale-110 -->
+          <img src="./img/skills/css3.png" class="h-16 w-auto" alt="CSS3 logo"/>
+          <span class="font-bold mt-2">CSS3</span>
+        </li>
+        <li class="flex flex-col items-center text-center mx-2 mt-4 transition-transform hover:scale-150"> <!-- hover:scale-110 -->
+          <img src="./img/skills/javascript.png" class="h-16 w-auto" alt="JavaScript logo"/>
+          <span class="font-bold mt-2">JavaScript</span>
+        </li>
+        <li class="flex flex-col items-center text-center mx-2 mt-4 transition-transform hover:scale-150"> <!-- hover:scale-110 -->
+          <img src="./img/skills/bootstrap.png" class="h-16 w-auto" alt="Bootstrap logo"/>
+          <span class="font-bold mt-2">Bootstrap</span>
+        </li>
+        <li class="flex flex-col items-center text-center mx-2 mt-4 transition-transform hover:scale-150"> <!-- hover:scale-110 -->
+          <img src="./img/skills/angular.png" class="h-16 w-auto" alt="Angular logo"/>
+          <span class="font-bold mt-2">Angular</span>
+        </li>
+        <li class="flex flex-col items-center text-center mx-2 mt-4 transition-transform hover:scale-150"> <!-- hover:scale-110 -->
+          <img src="./img/skills/react.png" class="h-16 w-auto" alt="React logo"/>
+          <span class="font-bold mt-2">React</span>
+        </li>
+        <li class="flex flex-col items-center text-center mx-2 mt-4 transition-transform hover:scale-150"> <!-- hover:scale-110 -->
+          <img src="./img/skills/firebase.png" class="h-16 w-auto" alt="Firebase logo"/>
+          <span class="font-bold mt-2">Firebase</span>
+        </li>        
+      </ul>
+    </section>
+
+    <section class="bg-black text-white p-8 py-4">
+      <div class="flex flex-col items-center justify-center">
+        <div class="text-center mb-12">
+          <h1 class="text-6xl font-bold mb-12">CONTACTO</h1>
+        </div>
+        <div class="space-y-6 mb-12">
+          <div class="flex items-center space-x-4">
+            <img
+              src="https://cdn-icons-png.flaticon.com/256/3536/3536445.png"
+              alt="WhatsApp"
+              class="w-12 h-12 rounded-full"
+            />
+            <a
+              href=""
+              class="bg-green-700 hover:bg-green-800 text-white font-bold py-2 px-4 rounded-3xl transition-colors"
+              >ENVIAR MENSAJE</a
+            >
+          </div>
+          <div class="flex items-center space-x-4">
+            <img
+              src="https://cdn-icons-png.flaticon.com/256/124/124010.png"
+              alt="Facebook"
+              class="w-12 h-12 rounded-full"
+            />
+            <a
+              href=""
+              class="bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded-3xl transition-colors"
+              >ENVIAR MENSAJE</a
+            >
+          </div>
+          <div class="flex items-center space-x-4">
+            <img
+              src="https://images.vexels.com/media/users/3/140138/isolated/preview/88e50689fa3280c748d000aaf0bad480-icono-de-ronda-de-correo-electronico-1.png"
+              alt="Email"
+              class="w-12 h-12 rounded-full"
+            />
+            <a
+              href=""
+              class="bg-red-700 hover:bg-red-800 text-white font-bold py-2 px-4 rounded-3xl transition-colors"
+              >ENVIAR MENSAJE</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="text-center text-lg mt-12 text-zinc-400 mb-12">
+        <p>2024 - Política de Privacidad</p>
+      </div>
+    </section>
+
+    <!-- Mounstro electrico  -->
+
+    <script src="./script.js"></script>
+
+    <script>
+      document
+        .getElementById("menuToggle")
+        .addEventListener("click", function () {
+          const navbar = document.getElementById("navbar-cta");
+          navbar.classList.toggle("hidden");
+        });
+    </script>
+
+    <script>
+      window.addEventListener("scroll", function () {
+        const navbar = document.getElementById("navbar");
+        if (window.scrollY > 0) {
+          navbar.classList.remove("bg-opacity-50");
+          navbar.classList.add("bg-opacity-75");
+        } else {
+          navbar.classList.remove("bg-opacity-75");
+          navbar.classList.add("bg-opacity-50");
+        }
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const links = document.querySelectorAll("nav a");
+
+        links.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute("href").substring(1);
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+              targetElement.scrollIntoView({ behavior: "smooth" });
+            }
+          });
+        });
+      });
+    </script>
+
+    <!-- Hacer que el canva funcione? -->
+
+    <script>
+      const canvas = document.getElementById("canvas");
+      const ctx = canvas.getContext("2d");
+
+      // Asegurarse de que el canvas cubra toda la pantalla
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      // Ejemplo de dibujo en el lienzo
+      ctx.fillStyle = "#00FF00";
+      ctx.fillRect(10, 10, 150, 100);
+
+      // Redibujar en caso de cambiar el tamaño de la ventana
+      window.addEventListener("resize", () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        // Redibuja el contenido en el lienzo aquí
+        ctx.fillStyle = "#00FF00";
+        ctx.fillRect(10, 10, 150, 100);
+      });
+    </script>
+
+    <!-- Efecto escritura -->
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+    <script>
+      const typed = new Typed(".typed", {
+        strings: ["HTML", "CSS", "JavaScript", "TailwindCSS", "GIT", "SQL", "Python", "Photoshop", "React", "Y MAS ..."],
+
+        typeSpeed: 50, // Velocidad en milisegundos para poner una letra
+        startDelay: 100, // Tiempo de retraso en iniciar la animación. Aplica también cuando termina y vuelve a iniciar
+        backSpeed: 25, // Velocidad en milisegundos para borrar una letra
+        smartBackspace: true, // Eliminar solamente las palabras que sean nuevas en una cadena de texto
+        shuffle: false, // Alterar el orden en el que escribe las palabras
+        backDelay: 2000, // Tiempo de espera después de que termina de escribir una palabra
+        loop: true, // Repetir el array de strings
+        loopCount: false, // Cantidad de veces a repetir el array.  false = infinito
+        showCursor: true, // Mostrar cursor palpitante
+        cursorChar: "", // Carácter para el cursor
+        contentType: "html", // 'html' o 'null' para texto sin formato
+      });
+    </script>
+  </body>
+</html>
