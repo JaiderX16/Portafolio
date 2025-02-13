@@ -107,6 +107,8 @@
   </style>
 
   <body class="bg-black">
+
+
     <section>
       <nav id="navbar" class="bg-black bg-opacity-50 backdrop-filter backdrop-blur-sm border-gray-200 fixed inset-x-0 top-0 z-50">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -190,6 +192,7 @@
     </section>
 
     <section id="INICIO">
+
       <div class="image-container relative w-full mt-16">
         <!-- Canvas como fondo -->
         <canvas id="canvas" class="absolute inset-0 h-full w-full"></canvas>
@@ -199,7 +202,7 @@
           
           <h1 class="text-2xl sm:text-2xl md:text-7xl lg:text-7xl font-bold my-3 ml-4">JAIDER PARAGUAY JUNCO</h1>
   
-          <h1 class="text-2xl sm:text-2xl md:text-7xl lg:text-6xl font-bold my-3 ml-4">Desarrollador en</h1>
+          <h1 class="text-2xl sm:text-2xl md:text-5xl lg:text-6xl font-bold my-3 ml-4">Desarrollador en</h1>
   
           <h1 class="text-3xl sm:text-3xl md:text-7xl lg:text-8xl font-bold my-3 md:h-20 h-8 lg:h-24 ml-4">
             <span class="typed"></span>
@@ -219,7 +222,7 @@
 
     <section id="SOBRE_MI" class="py-12">
 
-      <h1 class="text-7xl font-bold text-center text-white sm:mx-12 lg:mx-96 mb-16 relative">SOBRE MI</h1>
+      <h1 class="text-6xl font-bold text-center text-white sm:mx-12 lg:mx-96 mb-16 relative">SOBRE MI</h1>
       
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-12 max-w-7xl mx-auto px-4">
         <div class="space-y-12">
@@ -270,10 +273,10 @@
 
     <section id="SKILLS" class="py-16">
 
-      <h1 class="text-7xl font-bold text-center text-white sm:mx-12 lg:mx-96 mb-16 relative">SKILLS</h1>
+      <h1 class="text-6xl font-bold text-center text-white sm:mx-12 lg:mx-96 mb-16 relative">SKILLS</h1>
 
       <div class="max-w-7xl mx-auto px-4">
-        <div class="bg-gray-800/50 rounded-2xl shadow-2xl p-8 backdrop-blur-sm">
+        <div class="bg-gray-800/50 rounded-2xl shadow-2xl p-8 backdrop-blur-sm mx-2 md:mx-12">
           <ul class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-8 justify-items-center">
             <li class="group relative flex flex-col items-center">
               <div class="relative p-4 rounded-xl bg-gray-700/30 transition-all duration-300 group-hover:bg-blue-400/10 group-hover:scale-110">
@@ -338,20 +341,13 @@
 
 
 
-    
-
-    
-
-
-
-
-
 
     <section id="PROYECTOS" class="py-16">
-      <h1 class="text-7xl font-bold text-center text-white sm:mx-12 lg:mx-96 mb-16 relative">PROYECTOS</h1>
+
+      <h1 class="text-6xl font-bold text-center text-white sm:mx-12 lg:mx-96 mb-16 relative">PROYECTOS</h1>
     
       <div class="max-w-7xl mx-auto px-4">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           
           <!-- Proyecto 1: Chat Bot -->
           <div class="group bg-gray-800/50 rounded-xl overflow-hidden shadow-2xl hover:shadow-blue-400/20 transition-all duration-300">
@@ -400,24 +396,147 @@
             </div>
           </div>
     
-          <!-- Proyecto 2 -->
+          <!-- Proyecto 2: Terra Suport -->
           <div class="group bg-gray-800/50 rounded-xl overflow-hidden shadow-2xl hover:shadow-blue-400/20 transition-all duration-300">
-            <div class="p-6 flex items-center justify-center h-full">
-              <p class="text-gray-400 text-center">Próximo proyecto</p>
+            <div class="relative overflow-hidden">
+              <img 
+                class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-110" 
+                src="/img/Projects/Terra_Suport.png" 
+                alt="Aurora Chat Preview"
+              >
+              <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+    
+            <div class="p-6 space-y-4">
+              <h3 class="font-bold text-xl text-white group-hover:text-blue-400 transition-colors duration-300">
+                TERRA SUPORT
+              </h3>
+              
+              <p class="text-gray-300 text-sm leading-relaxed">
+                Chatbot interactivo basado en la API de Gemini, capaz de responder
+                preguntas y mantener conversaciones fluidas mediante inteligencia artificial.
+              </p>
+    
+              <div class="space-y-2">
+                <h4 class="font-bold text-white/80">TECNOLOGÍAS USADAS</h4>
+                <div class="flex gap-4 items-center">
+                  <div class="p-2 bg-gray-700/30 rounded-lg group-hover:bg-blue-400/5 transition-colors duration-300">
+                    <img src="./img/skills/html5.png" class="h-8 w-auto" alt="HTML5">
+                  </div>
+                  <div class="p-2 bg-gray-700/30 rounded-lg group-hover:bg-blue-400/5 transition-colors duration-300">
+                    <img src="./img/skills/css3.png" class="h-8 w-auto" alt="CSS3">
+                  </div>
+                  <div class="p-2 bg-gray-700/30 rounded-lg group-hover:bg-blue-400/5 transition-colors duration-300">
+                    <img src="./img/skills/javascript.png" class="h-8 w-auto" alt="JavaScript">
+                  </div>
+                  <div class="p-2 bg-gray-700/30 rounded-lg group-hover:bg-blue-400/5 transition-colors duration-300">
+                    <img src="./img/skills/php.png" class="h-8 w-auto" alt="JavaScript">
+                  </div>
+                </div>
+              </div>
+    
+              <a 
+                href="https://aurora-chat-lilac.vercel.app/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="inline-block w-full text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300"
+              >
+                VER DEMO
+              </a>
             </div>
           </div>
     
           <!-- Proyecto 3 -->
           <div class="group bg-gray-800/50 rounded-xl overflow-hidden shadow-2xl hover:shadow-blue-400/20 transition-all duration-300">
-            <div class="p-6 flex items-center justify-center h-full">
-              <p class="text-gray-400 text-center">Próximo proyecto</p>
+            <div class="relative overflow-hidden">
+              <img 
+                class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-110" 
+                src="/img/Projects/Terra_Suport.png" 
+                alt="Aurora Chat Preview"
+              >
+              <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+    
+            <div class="p-6 space-y-4">
+              <h3 class="font-bold text-xl text-white group-hover:text-blue-400 transition-colors duration-300">
+                TERRA SUPORT
+              </h3>
+              
+              <p class="text-gray-300 text-sm leading-relaxed">
+                Chatbot interactivo basado en la API de Gemini, capaz de responder
+                preguntas y mantener conversaciones fluidas mediante inteligencia artificial.
+              </p>
+    
+              <div class="space-y-2">
+                <h4 class="font-bold text-white/80">TECNOLOGÍAS USADAS</h4>
+                <div class="flex gap-4 items-center">
+                  <div class="p-2 bg-gray-700/30 rounded-lg group-hover:bg-blue-400/5 transition-colors duration-300">
+                    <img src="./img/skills/html5.png" class="h-8 w-auto" alt="HTML5">
+                  </div>
+                  <div class="p-2 bg-gray-700/30 rounded-lg group-hover:bg-blue-400/5 transition-colors duration-300">
+                    <img src="./img/skills/css3.png" class="h-8 w-auto" alt="CSS3">
+                  </div>
+                  <div class="p-2 bg-gray-700/30 rounded-lg group-hover:bg-blue-400/5 transition-colors duration-300">
+                    <img src="./img/skills/javascript.png" class="h-8 w-auto" alt="JavaScript">
+                  </div>
+                </div>
+              </div>
+    
+              <a 
+                href="https://aurora-chat-lilac.vercel.app/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="inline-block w-full text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300"
+              >
+                VER DEMO
+              </a>
             </div>
           </div>
     
           <!-- Proyecto 4 -->
           <div class="group bg-gray-800/50 rounded-xl overflow-hidden shadow-2xl hover:shadow-blue-400/20 transition-all duration-300">
-            <div class="p-6 flex items-center justify-center h-full">
-              <p class="text-gray-400 text-center">Próximo proyecto</p>
+            <div class="relative overflow-hidden">
+              <img 
+                class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-110" 
+                src="/img/Projects/Terra_Suport.png" 
+                alt="Aurora Chat Preview"
+              >
+              <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+    
+            <div class="p-6 space-y-4">
+              <h3 class="font-bold text-xl text-white group-hover:text-blue-400 transition-colors duration-300">
+                TERRA SUPORT
+              </h3>
+              
+              <p class="text-gray-300 text-sm leading-relaxed">
+                Chatbot interactivo basado en la API de Gemini, capaz de responder
+                preguntas y mantener conversaciones fluidas mediante inteligencia artificial.
+              </p>
+    
+              <div class="space-y-2">
+                <h4 class="font-bold text-white/80">TECNOLOGÍAS USADAS</h4>
+                <div class="flex gap-4 items-center">
+                  <div class="p-2 bg-gray-700/30 rounded-lg group-hover:bg-blue-400/5 transition-colors duration-300">
+                    <img src="./img/skills/html5.png" class="h-8 w-auto" alt="HTML5">
+                  </div>
+                  <div class="p-2 bg-gray-700/30 rounded-lg group-hover:bg-blue-400/5 transition-colors duration-300">
+                    <img src="./img/skills/css3.png" class="h-8 w-auto" alt="CSS3">
+                  </div>
+                  <div class="p-2 bg-gray-700/30 rounded-lg group-hover:bg-blue-400/5 transition-colors duration-300">
+                    <img src="./img/skills/javascript.png" class="h-8 w-auto" alt="JavaScript">
+                  </div>
+                </div>
+              </div>
+    
+              <a 
+                href="https://aurora-chat-lilac.vercel.app/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="inline-block w-full text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300"
+              >
+                VER DEMO
+              </a>
             </div>
           </div>
     
@@ -430,7 +549,8 @@
 
 
     <section id="CONTACTO" class="py-16">
-      <h1 class="text-7xl font-bold text-center text-white sm:mx-12 lg:mx-96 mb-16 relative">CONTACTO</h1>
+
+      <h1 class="text-6xl font-bold text-center text-white sm:mx-12 lg:mx-96 mb-16 relative">CONTACTO</h1>
     
       <div class="max-w-2xl mx-auto px-4">
         <div class="bg-gray-800/30 rounded-2xl shadow-2xl p-8 backdrop-blur-sm space-y-8">
@@ -448,7 +568,7 @@
               <span class="flex-1 text-lg font-bold text-gray-300 group-hover:text-green-400 transition-colors duration-300">
                 WhatsApp
               </span>
-              <span class="px-6 py-2 rounded-full bg-green-600 text-white font-bold text-sm group-hover:bg-green-500 transition-colors duration-300">
+              <span class="hidden md:block px-6 py-2 rounded-full bg-green-600 text-white font-bold text-sm group-hover:bg-green-500 transition-colors duration-300">
                 ENVIAR MENSAJE
               </span>
             </a>
@@ -467,7 +587,7 @@
               <span class="flex-1 text-lg font-bold text-gray-300 group-hover:text-blue-400 transition-colors duration-300">
                 Linkedin
               </span>
-              <span class="px-6 py-2 rounded-full bg-blue-600 text-white font-bold text-sm group-hover:bg-blue-500 transition-colors duration-300">
+              <span class="hidden md:block px-6 py-2 rounded-full bg-blue-600 text-white font-bold text-sm group-hover:bg-blue-500 transition-colors duration-300">
                 ENVIAR MENSAJE
               </span>
             </a>
@@ -486,7 +606,7 @@
               <span class="flex-1 text-lg font-bold text-gray-300 group-hover:text-red-400 transition-colors duration-300">
                 Email
               </span>
-              <span class="px-6 py-2 rounded-full bg-red-600 text-white font-bold text-sm group-hover:bg-red-500 transition-colors duration-300">
+              <span class="hidden md:block px-6 py-2 rounded-full bg-red-600 text-white font-bold text-sm group-hover:bg-red-500 transition-colors duration-300">
                 ENVIAR MENSAJE
               </span>
             </a>
